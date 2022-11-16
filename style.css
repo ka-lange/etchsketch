@@ -1,7 +1,4 @@
 #grid {
-    width: 400px;
-    height: 400px;
-    border-style: dotted;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -13,6 +10,15 @@
 }
 
 .gridsquare {
+    height: 30px;
+    width: 30px;
+    color: azure;
+    text-align: center;
     border-style: solid;
+    background-color: azure;
     display: flex;
+}
+
+.gridsquare.active {
+    background-color: black;
 }
