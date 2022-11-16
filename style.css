@@ -1,22 +1,31 @@
 #grid {
+    width: 500px;
+    height: 500px;
+    border-style: dotted;
+    flex-direction: column;
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    
 }
 
 .column {
-    border-style: solid;
     display: flex;
+    flex: 1;
+    background-color: azure;
+    border-style: solid;
+    border-width: 1px;
+    
+   
 }
 
 .gridsquare {
-    height: 30px;
-    width: 30px;
-    color: azure;
-    text-align: center;
-    border-style: solid;
-    background-color: azure;
     display: flex;
+    flex: 1;
+    background-color: azure;
+    border-style: solid;
+    border-width: 1px;
+    
+    
 }
 
 .gridsquare.active {
