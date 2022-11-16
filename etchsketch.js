@@ -7,9 +7,22 @@ for(var i = 0; i < columns; i++) {
     column.className = 'column';
     for (var j=0; j < rows; j++) {
         var row = document.createElement('div'); //create row
-        row.className = 'gridsquare';
-        row.textContent = i + '-' + j;  //set text (?)
+        row.classList.add('gridsquare');
+        row.textContent = i + '-' + j;  //set text placeholders for the divs
         column.appendChild(row);  //append row in column
+        
+        row.addEventListener('mouseover', colorChange)
+        function colorChange () {
+            row.setAttribute("style", "background-color: black;")
+        }
     }
-    grid.appendChild(column); //append column (with rows) inside grid
+    grid.appendChild(column); //append column (with rows) inside grid   
 }
+
+//Set up a “hover” effect so that the grid divs change color 
+//when your mouse passes over them, 
+//leaving a (pixelated) trail through your grid
+//like a pen would.
+
+
+
