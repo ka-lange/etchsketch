@@ -7,13 +7,19 @@
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body onload="initialGrid()">
 	<script src="etchsketch.js" defer></script>
     <div class = 'title'>WELCOME TO ETCH-A-SKETCH!</div>
-    <div class = 'choices'>
-        <input type="range" min="1" max="50" class="slider" id="slider">
-    </div>
-    <div id = 'grid'>
+    <div class="container">
+        <div id = 'grid'>  
+        </div>
+        <div class = 'choices'>
+            <div class="gameslider">
+                <div class="text">GRID SIZE</div>
+                <input type="range" min="1" max="50" class="slider" id="slider">
+            </div>
+            <button class="button" onclick="resetButton()">RESET</button>
+        </div>
     </div>
   </body>
 </html>

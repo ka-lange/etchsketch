@@ -1,12 +1,10 @@
 var grid = document.getElementById('grid');
 
 
-function buttonClick() {
-    let gridSize = prompt("Grid Size???");
-        console.log(+gridSize);
+function initialGrid() {
 
-    columns = +gridSize;
-    rows = +gridSize;
+    columns = 25;
+    rows = 25;
 
     for(var i = 0; i < columns; i++) {
         var column = document.createElement('div'); //create column
@@ -25,6 +23,13 @@ function reset() {
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
     }
+}
+
+function resetButton() {
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+    initialGrid();
 }
 
 //this below adds a class to all the new divs when hovered 
@@ -49,7 +54,7 @@ slider.addEventListener ('input', function(){
 
     columns = value
     rows = value
-    
+
     for(var i = 0; i < columns; i++) {
         var column = document.createElement('div'); //create column
         column.className = 'column';
