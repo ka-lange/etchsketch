@@ -1,6 +1,6 @@
 var grid = document.getElementById('grid');
 
-//just make this a prompt tomorrow lol
+
 function buttonClick() {
     let gridSize = prompt("Grid Size???");
         console.log(+gridSize);
@@ -14,12 +14,19 @@ function buttonClick() {
         for (var j=0; j < rows; j++) {
             var row = document.createElement('div'); //create row
             row.classList.add('gridsquare');
-            row.textContent = '.';  //set text placeholders for the divs
+            row.textContent = '';  //set text placeholders for the divs
             column.appendChild(row);  //append row in column
         }
         grid.appendChild(column); //append column (with rows) inside grid   
     }
 }
+
+function reset() {
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+}
+
 //this below adds a class to all the new divs when hovered 
 //and the css file targets the new class
 grid.addEventListener('mouseover', function (e) {
@@ -29,7 +36,33 @@ grid.addEventListener('mouseover', function (e) {
     }
   });
   
-//UI
+//add slider for grid size
+
+const slider = document.getElementById('slider');
+var output = document.getElementById('slider').value;
+
+
+slider.addEventListener ('input', function(){
+    let value = document.getElementById('slider').value;
+    output.textContent = value;
+    reset(grid);
+
+    columns = value
+    rows = value
+    
+    for(var i = 0; i < columns; i++) {
+        var column = document.createElement('div'); //create column
+        column.className = 'column';
+        for (var j=0; j < rows; j++) {
+            var row = document.createElement('div'); //create row
+            row.classList.add('gridsquare');
+            row.textContent = '';  //set text placeholders for the divs
+            column.appendChild(row);  //append row in column
+        }
+        grid.appendChild(column); //append column (with rows) inside grid   
+    }
+    
+})
 
 
 
