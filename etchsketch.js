@@ -38,6 +38,8 @@ grid.addEventListener('mouseover', function (e) {
     // Add the "active" class to only divs with a "gridsquare" class
     if (e.target.matches('.gridsquare')) {
       e.target.classList.add('active');
+      //add more target class for different colors
+      //like a different target tag if color is chosen
     }
   });
   
